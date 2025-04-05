@@ -1,0 +1,33 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "timezone": "UTC",
+  "docker": {
+    "fileMatch": [
+      "Dockerfile"
+    ],
+    "enabled": true
+  },
+  "packageRules": [
+    {
+      "packageNames": [
+        "curl",
+        "httpd",
+        "python3",
+        "nginx",
+        "openssl"
+      ],
+      "managers": [
+        "dockerfile"
+      ],
+      "enabled": true,
+      "updateTypes": [
+        "minor",
+        "major"
+      ],
+      "automerge": false,
+      "commitMessage": "{{packageFile}}: update {{depName}} to {{newVersion}}"
+    }
+  ]
+}

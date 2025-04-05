@@ -1,0 +1,14 @@
+# Node.js
+node_modules/
+
+# Docker
+*.tar
+*.log
+*.bak
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
