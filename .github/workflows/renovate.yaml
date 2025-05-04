@@ -12,12 +12,12 @@ jobs:
   renovate:
     runs-on: ubuntu-latest
     steps:
+      - name: Show Repo
+          run: echo "run on ${{ github.repository }}"
       - name: Checkout
         uses: actions/checkout@v4.2.2
       - name: Self-hosted Renovate
-        env:
-          GITHUB_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
         uses: renovatebot/github-action@v41.0.22
         with:
-          configurationFile: example/renovate-config.js
-          token: ${{ secrets.RENOVATE_TOKEN }}
+          configurationFile: renovate.json
+          token: ${{ secrets.GITHUB_TOKEN }}
