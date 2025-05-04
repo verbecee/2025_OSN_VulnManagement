@@ -15,8 +15,8 @@
         "curl",
         "httpd",
         "python3",
-        "nginx",
-        "openssl"
+        "openssl",
+        "nginx"
       ],
       "managers": [
         "dockerfile"
