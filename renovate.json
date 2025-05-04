@@ -1,33 +1,19 @@
 {
-  "extends": [
-    "config:base"
-  ],
-  "timezone": "UTC",
-  "docker": {
-    "fileMatch": [
-      "Dockerfile"
-    ],
-    "enabled": true
-  },
-  "packageRules": [
-    {
-      "packageNames": [
-        "curl",
-        "httpd",
-        "python3",
-        "openssl",
-        "nginx"
-      ],
-      "managers": [
-        "dockerfile"
-      ],
-      "enabled": true,
-      "updateTypes": [
-        "minor",
-        "major"
-      ],
-      "automerge": false,
-      "commitMessage": "{{packageFile}}: update {{depName}} to {{newVersion}}"
-    }
-  ]
+"extends": ["config:recommended"],
+         "timezone": "UTC",
+         "packageRules": [
+           {
+             "matchCategories": ["docker"],
+             "fileMatch": ["Dockerfile"],
+             "enabled": true
+           },
+           {
+             "matchPackageNames": ["curl", "httpd", "python3", "openssl", "nginx"],
+             "matchManagers": ["dockerfile"],
+             "enabled": true,
+             "matchUpdateTypes": ["minor", "major"],
+             "automerge": false,
+             "commitMessage": "{{packageFile}}: update {{depName}} to {{newVersion}}"
+           }
+         ]
 }
