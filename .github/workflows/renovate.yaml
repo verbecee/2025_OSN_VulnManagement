@@ -12,8 +12,6 @@ jobs:
   renovate:
     runs-on: ubuntu-latest
     steps:
-      - name: Show Repo
-          run: echo "run on ${{ github.repository }}"
       - name: Checkout
         uses: actions/checkout@v4.2.2
       - name: Self-hosted Renovate
