@@ -1,0 +1,35 @@
+{
+  "extends": [
+    "config:recommended"
+  ],
+  "timezone": "UTC",
+  "packageRules": [
+    {
+      "matchCategories": [
+        "docker"
+      ],
+      "fileMatch": [
+        "Dockerfile"
+      ],
+      "enabled": true
+    },
+    {
+      "matchPackageNames": [
+        "curl",
+        "httpd",
+        "python3",
+        "openssl",
+        "nginx"
+      ],
+      "matchManagers": [
+        "dockerfile"
+      ],
+      "enabled": true,
+      "matchUpdateTypes": [
+        "minor",
+        "major"
+      ],
+      "automerge": false
+    }
+  ]
+}
