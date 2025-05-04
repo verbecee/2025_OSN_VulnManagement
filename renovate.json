@@ -4,12 +4,19 @@
   ],
   "timezone": "UTC",
   "commitMessage": {
-    "env": "{{packageFile}}: update {{depName}} to {{newVersion}}"
-  },
-  "managerFilePatterns": {
-
+    "env": "{{packageFile}}: update {{depName}} to {{newVersion}}",
+    "type": "string"
   },
   "packageRules": [
+    {
+      "matchCategories": [
+        "docker"
+      ],
+      "fileMatch": [
+        "Dockerfile"
+      ],
+      "enabled": true
+    },
     {
       "matchPackageNames": [
         "curl",
