@@ -4,6 +4,9 @@
     "config:recommended"
   ],
   "timezone": "UTC",
+  "repositories": [
+    "verbecee/2025_OSN_VulnManagement"
+  ],
   "packageRules": [
     {
       "matchCategories": [
@@ -22,11 +25,10 @@
         "openssl",
         "nginx"
       ],
-      "matchManagers": [
-        "dockerfile"
-      ],
+      "matchDatasources": ["docker"],
       "enabled": true,
       "matchUpdateTypes": [
+        "pin",
         "minor",
         "major"
       ],
