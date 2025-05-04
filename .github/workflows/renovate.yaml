@@ -11,30 +11,11 @@ on:
 jobs:
   renovate:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout the code
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+      - name: Self-hosted Renovate
+        uses: renovatebot/github-action@v41.0.22
         with:
-          node-version: '14'  # You can specify a different Node.js version here
-
-      - name: Install Renovate CLI
-        run: |
-          npm install -g renovate
-
-      - name: Run Renovate CLI
-        run: |
-          renovate renovate.json  # Use your Renovate configuration file
-
-      - name: Commit and push changes
-        run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
-          git add .
-          git commit -m "chore: run Renovate" || echo "No changes to commit"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Automatically provided by GitHub for authenticated actions
+          configurationFile: example/renovate-config.js
+          token: ${{ secrets.RENOVATE_TOKEN }}
