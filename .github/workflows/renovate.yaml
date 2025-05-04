@@ -27,7 +27,7 @@ jobs:
 
       - name: Run Renovate CLI
         run: |
-          renovate --config-file renovate.json  # Use your Renovate configuration file
+          renovate renovate.json  # Use your Renovate configuration file
 
       - name: Commit and push changes
         run: |
