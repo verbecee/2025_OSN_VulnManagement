@@ -29,6 +29,5 @@ jobs:
         with:
           configurationFile: default.json
           token: ${{ secrets.RENOVATE_TOKEN }}
-        # env: 
-        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        #   RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
+        env: 
+          LOG_LEVEL: 'debug'
