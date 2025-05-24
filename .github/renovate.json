@@ -12,8 +12,8 @@
       "matchCategories": [
         "docker"
       ],
-      "fileMatch": [
-        "Dockerfile"
+      "managerFilePatterns": [
+        "/Dockerfile/"
       ],
       "enabled": true
     },
@@ -25,7 +25,9 @@
         "openssl",
         "nginx"
       ],
-      "matchDatasources": ["docker"],
+      "matchDatasources": [
+        "docker"
+      ],
       "enabled": true,
       "matchUpdateTypes": [
         "pin",
