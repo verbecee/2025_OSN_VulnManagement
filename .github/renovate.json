@@ -12,8 +12,8 @@
       "matchCategories": [
         "docker"
       ],
-      "managerFilePatterns": [
-        "/Dockerfile/"
+      "fileMatch": [
+        "Dockerfile"
       ],
       "enabled": true
     },
