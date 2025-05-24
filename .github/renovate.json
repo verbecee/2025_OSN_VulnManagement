@@ -4,9 +4,6 @@
     "config:recommended"
   ],
   "timezone": "UTC",
-  "repositories": [
-    "verbecee/2025_OSN_VulnManagement"
-  ],
   "packageRules": [
     {
       "matchCategories": [
