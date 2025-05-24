@@ -14,8 +14,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.2
+      - name: Configure renovate token
+        run: |
+          if [[ "${RENOVATE_TOKEN}" != ""  ]]; then
+            echo "RENOVATE_TOKEN=${RENOVATE_TOKEN}" >> $GITHUB_ENV
+          else
+            echo "RENOVATE_TOKEN=${GITHUB_TOKEN}" >> $GITHUB_ENV
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
       - name: Self-hosted Renovate
         uses: renovatebot/github-action@v41.0.22
         with:
           configurationFile: default.json
           token: ${{ secrets.RENOVATE_TOKEN }}
+        # env: 
+        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        #   RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
