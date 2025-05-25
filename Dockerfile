@@ -6,19 +6,19 @@ FROM alpine:$ALPINE_VERSION
 # https://docs.renovatebot.com/modules/datasource/repology/
 
 # renovate datasource=repology depName=alpine_3_20/curl versioning=loose
-ARG CURL_VERSION=8.12.1-r0
+ENV CURL_VERSION=8.12.1-r0
 
 # renovate datasource=repology depName=alpine_3_20/apache2 versioning=loose
-ARG APACHE2_VERSION=2.4.62-r0
+ENV APACHE2_VERSION=2.4.62-r0
 
 # renovate datasource=repology depName=alpine_3_20/python3 versioning=loose
-ARG PYTHON3_VERSION=3.12.10-r1
+ENV PYTHON3_VERSION=3.12.10-r1
 
 # renovate datasource=repology depName=alpine_3_20/nginx versioning=loose
-ARG NGINX_VERSION=1.26.3-r0
+ENV NGINX_VERSION=1.26.3-r0
 
 # renovate datasource=repology depName=alpine_3_20/openssl versioning=loose
-ARG OPENSSL_VERSION=3.3.1-r0
+ENV OPENSSL_VERSION=3.3.1-r0
 
 
 
